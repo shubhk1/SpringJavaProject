@@ -5,12 +5,18 @@
     xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!-- bean definitions here -->
+    
     <bean id="bike" class="com.di.Bike">
-  <!--   <property name ="color" value="Green"></property> -->     <!--  default constructor internally call and set color = Green -->
-   
-   <constructor-arg name="color" value="Red"></constructor-arg>       <!-- in case when we set value through constructor -->
-   
+  <!--   <property name ="color" value="Green"></property> -->     <!--  default constructor internally call and set color = Green --> 
+   <constructor-arg name="engine">			 <!-- in case when we set value through constructor -->
+   <bean class = "com.di.Engine"></bean>   
+   </constructor-arg>       
+    </bean>
+    
+    <bean id="car" class="com.di.Car">  
+   <constructor-arg name="engine">			 <!-- in case when we set value through constructor -->
+   <bean class = "com.di.Engine"></bean>  
+   </constructor-arg>        
     </bean>
 
 </beans>

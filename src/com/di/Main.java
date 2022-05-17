@@ -11,7 +11,15 @@ public class Main {
 		
 		Bike bike = ac.getBean("bike",Bike.class);
 		
+		bike.startEngine();
 		bike.showColor();
+		
+		Bike bike2 = ac.getBean("bike",Bike.class);
+		
+		bike2.color="RED";
+		
+		bike.startEngine();
+		
 		
 
 	}
